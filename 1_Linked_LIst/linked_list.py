@@ -53,21 +53,56 @@ class S_linked_list:
         else: # tail이 가리키는 node 변경 후 tail 변경
             self.tail.next = node
             self.tail = node
+    
+    def delete(self, idx: int)-> int: # idx에 해당하는 node를 삭제하고, 그 node의 data 출력
+        location = 0 # 현재 위치
+        cur_node = self.head
+        pre_node = None
+        
+        if self.empty() or self.list_size() < idx: # 연결 리스트가 비어있거나, 벗어나는 값을 받은 경우
+            return -1
+        elif idx == 0: # 0번째 idx를 삭제하는 경우(head)
+            tmp = self.head.data
+            self.head = self.head.next
+            return tmp
+        else: # pre_node와 cur_node로 해당하는 idx의 node를 제거
+            while True:
+                if location == idx:
+                    tmp = cur_node.data
+                    pre_node.next = cur_node.next
+                    break
+                else:
+                    pre_node = cur_node
+                    cur_node = cur_node.next
+                    location += 1
+            return tmp
 
-if __name__ == "__main__":
+if __name__ == "__main__": # 테스트 해보기
     s_list = S_linked_list()
+    print('made s_list')
     print(f's_list.empty(): {s_list.empty()}')
     print(f's_list.list_size(): {s_list.list_size()}')
     print(f's_list.print(): {s_list.print()}')
     print()
+    
     s_list.append(1)
+    print('append 1')
     print(f's_list.empty(): {s_list.empty()}')
     print(f's_list.list_size(): {s_list.list_size()}')
     print(f's_list.print(): {s_list.print()}')
     print()
+    
     s_list.append(2)
     s_list.append(3)
     s_list.append(4)
+    print('append 2, 3, 4')
+    print(f's_list.empty(): {s_list.empty()}')
+    print(f's_list.list_size(): {s_list.list_size()}')
+    print(f's_list.print(): {s_list.print()}')
+    print()
+    
+    print('delete 3')
+    print(f's_list.delete(3):{s_list.delete(3)}')
     print(f's_list.empty(): {s_list.empty()}')
     print(f's_list.list_size(): {s_list.list_size()}')
     print(f's_list.print(): {s_list.print()}')
