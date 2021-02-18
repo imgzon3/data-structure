@@ -41,3 +41,13 @@ class S_linked_list:
                     break
                 else:
                     our_node = our_node.next
+    
+    def Append(self, data: int): # 연결 리스트에 node를 추가하는 함수
+        node = Node(data)
+        
+        if self.Empty(): # 리스트가 비어있다면, head와 tail 지정해주기
+            self.head = node
+            self.tail = node
+        else: # tail이 가리키는 node 변경 후 tail 변경
+            self.tail.next = node
+            self.tail = node
