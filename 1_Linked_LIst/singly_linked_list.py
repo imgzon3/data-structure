@@ -76,6 +76,34 @@ class S_linked_list:
                     cur_node = cur_node.next
                     location += 1
             return tmp
+    
+    def insert(self, idx: int, data: int): # idx 위치에 data를 가지는 node 삽입하는 함수
+        node = Node(data) # 새로운 노드
+        location = 0 # 현재 위치
+        cur_node = self.head
+        pre_node = None
+        
+        if idx == 0: # idx가 0인 경우, 연결 리스트 가장 앞에 삽입
+            if self.empty(): # 리스트가 비어있는 경우
+                self.head = node
+                self.tail = node
+            else: # 리스트가 비어있지 않다면, 맨 앞에 삽입
+                node.next = self.head
+                self.head = node
+        elif idx < 0 or idx > self.list_size(): # idx가 0보다 작거나, 리스트 크기보다 큰 경우
+            return
+        elif idx == self.list_size()-1: # idx가 리스트의 마지막 index인 경우
+            self.append(data)
+        else:
+            while True:
+                if location == idx:
+                    node.next = cur_node
+                    pre_node.next = node
+                    break
+                else:
+                    pre_node = cur_node
+                    cur_node = cur_node.next
+                    location += 1
 
 if __name__ == "__main__": # 테스트 해보기
     s_list = S_linked_list()
@@ -103,6 +131,13 @@ if __name__ == "__main__": # 테스트 해보기
     
     print('delete 3')
     print(f's_list.delete(3):{s_list.delete(3)}')
+    print(f's_list.empty(): {s_list.empty()}')
+    print(f's_list.list_size(): {s_list.list_size()}')
+    print(f's_list.print(): {s_list.print()}')
+    print()
+    
+    s_list.insert(1, 10)
+    print('insert data:10 in idx:1')
     print(f's_list.empty(): {s_list.empty()}')
     print(f's_list.list_size(): {s_list.list_size()}')
     print(f's_list.print(): {s_list.print()}')
