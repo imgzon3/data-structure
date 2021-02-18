@@ -8,17 +8,17 @@ class S_linked_list:
         self.head = None
         self.tail = None
     
-    def Empty(self)-> int: # 리스트가 비어있는지 확인하는 함수
+    def empty(self)-> int: # 리스트가 비어있는지 확인하는 함수
         if self.head == None and self.tail == None:
             return 1 # 비어있다면 1 return
         else:
             return 0 # 비어있지 않다면 0 return
     
-    def List_size(self)-> int: # 리스트의 크기를 반환하는 함수
+    def list_size(self)-> int: # 리스트의 크기를 반환하는 함수
         list_size = 1
         our_node = self.head # head에서 시작
         
-        if self.Empty(): # 비어있다면 0 return
+        if self.empty(): # 비어있다면 0 return
             return 0
         else:
             while True:
@@ -27,27 +27,48 @@ class S_linked_list:
                 else: # 다음 node가 있다면
                     list_size += 1
                     our_node = our_node.next
-            return our_node
+            return list_size
     
-    def Print(self)-> int: # 연결 리스트의 elements를 출력하는 함수
+    def print(self)-> str: # 연결 리스트의 elements를 출력하는 함수
         our_node = self.head
+        tmp = ''
         
-        if self.Empty(): # 리스트가 비어있다면 -1 return
-            return -1
+        if self.empty(): # 리스트가 비어있다면 -1 return
+            return '-1'
         else:
             while True:
-                print(our_node.data)
+                tmp += str(our_node.data) + ' '
                 if our_node.next == None:
                     break
                 else:
                     our_node = our_node.next
+            return tmp
     
-    def Append(self, data: int): # 연결 리스트에 node를 추가하는 함수
+    def append(self, data: int): # 연결 리스트에 node를 추가하는 함수
         node = Node(data)
         
-        if self.Empty(): # 리스트가 비어있다면, head와 tail 지정해주기
+        if self.empty(): # 리스트가 비어있다면, head와 tail 지정해주기
             self.head = node
             self.tail = node
         else: # tail이 가리키는 node 변경 후 tail 변경
             self.tail.next = node
             self.tail = node
+
+if __name__ == "__main__":
+    s_list = S_linked_list()
+    print(f's_list.empty(): {s_list.empty()}')
+    print(f's_list.list_size(): {s_list.list_size()}')
+    print(f's_list.print(): {s_list.print()}')
+    print()
+    s_list.append(1)
+    print(f's_list.empty(): {s_list.empty()}')
+    print(f's_list.list_size(): {s_list.list_size()}')
+    print(f's_list.print(): {s_list.print()}')
+    print()
+    s_list.append(2)
+    s_list.append(3)
+    s_list.append(4)
+    print(f's_list.empty(): {s_list.empty()}')
+    print(f's_list.list_size(): {s_list.list_size()}')
+    print(f's_list.print(): {s_list.print()}')
+    print()
