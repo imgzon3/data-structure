@@ -3,3 +3,5 @@ class Stack_array: # 배열을 기반으로 한 스택
         self.stack = [] # 배열
         self.t = -1 # 초기 top의 index -1로 초기화
     
+    def size(self)->int: # 스택의 원소 개수를 반환하는 함수
+        return len(self.stack)
