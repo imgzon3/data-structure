@@ -26,7 +26,7 @@ class Stack_array: # 배열을 기반으로 한 스택
             self.t -= 1 # top index - 1 하기
             return self.stack.pop(-1) # pop함수 실행
 
-if __name__ == "__main__":
+if __name__ == "__main__": # 테스트 케이스
     stack = Stack_array()
     print('made stack')
     print(f'stack.empty: {stack.empty()}')
