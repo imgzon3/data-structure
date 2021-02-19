@@ -15,4 +15,8 @@ class Stack_array: # 배열을 기반으로 한 스택
         else:
             return self.stack[self.t]
     
+    def push(self, n: int): # 새로운 값을 push하는 함수
+        self.stack.append(n) # python은 리스트의 크기 제한이 없으므로, 바로 append
+        self.t += 1 # top index + 1 하기
+    
     
