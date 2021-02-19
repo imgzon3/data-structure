@@ -25,4 +25,34 @@ class Stack_array: # 배열을 기반으로 한 스택
         else:
             self.t -= 1 # top index - 1 하기
             return self.stack.pop(-1) # pop함수 실행
+
+if __name__ == "__main__":
+    stack = Stack_array()
+    print('made stack')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
     
+    stack.push(1)
+    print('push 1')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
+    
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    print('push 2, 3, 4')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
+    
+    print('pop')
+    print(f'stack.pop: {stack.pop()}')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
