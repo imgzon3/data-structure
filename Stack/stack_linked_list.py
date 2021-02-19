@@ -57,3 +57,8 @@ class S_linked_list:
             tmp = self.head.data
             self.head = self.head.next
             return tmp
+
+class Stack_linked:
+    def __init__(self):
+        self.stack = S_linked_list()
+        self.t = -1
