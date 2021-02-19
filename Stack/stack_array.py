@@ -13,10 +13,16 @@ class Stack_array: # 배열을 기반으로 한 스택
         if self.empty(): # 스택이 비어있다면
             return -1
         else:
-            return self.stack[self.t]
+            return self.stack[self.t] # index t의 값 반환
     
-    def push(self, n: int): # 새로운 값을 push하는 함수
+    def push(self, n: int): # 스택의 새로운 값을 push하는 함수
         self.stack.append(n) # python은 리스트의 크기 제한이 없으므로, 바로 append
         self.t += 1 # top index + 1 하기
     
+    def pop(self)-> int: # 스택의 top의 값을 삭제하고 반환하는 함수
+        if self.empty(): # 스택이 비어있다면
+            return -1
+        else:
+            self.t -= 1 # top index - 1 하기
+            return self.stack.pop(-1) # pop함수 실행
     
