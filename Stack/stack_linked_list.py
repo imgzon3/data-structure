@@ -60,5 +60,5 @@ class S_linked_list:
 
 class Stack_linked:
     def __init__(self):
-        self.stack = S_linked_list()
-        self.t = -1
+        self.stack = S_linked_list() # singly linked list기반 저장
+        self.t = -1 # top index -1로 default
