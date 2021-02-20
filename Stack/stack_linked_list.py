@@ -8,7 +8,7 @@ class S_linked_list:
         self.head = None
         self.tail = None
     
-    def empty(self)-> int: # 리스트가 비어있는지 확인하는 함수
+    def empty(self)-> bool: # 리스트가 비어있는지 확인하는 함수
         if self.head == None and self.tail == None:
             return 1 # 비어있다면 1 return
         else:
@@ -62,3 +62,11 @@ class Stack_linked:
     def __init__(self):
         self.stack = S_linked_list() # singly linked list기반 저장
         self.t = -1 # top index -1로 default
+    
+    def size(self)->int: # 스택의 크기 return
+        return self.stack.list_size()
+    
+    def empty(self)-> bool: # 스택이 비었는지 여부 return
+        return self.empty()
+    
+    
