@@ -1,3 +1,3 @@
-tmp = [1, 2, 3, 4, 5]
-tmp.pop(0)
+tmp = [1, 2, 3, 4]
+tmp.remove(2)
 print(tmp)
