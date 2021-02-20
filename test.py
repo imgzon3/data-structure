@@ -1,10 +1,3 @@
-tmp = []
-print(len(tmp))
-tmp.append(1)
-print(tmp)
-print(len(tmp))
-tmp.append(2)
-tmp.append(3)
-print(tmp)
-tmp.pop()
+tmp = [1, 2, 3, 4, 5]
+tmp.pop(0)
 print(tmp)
