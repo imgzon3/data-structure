@@ -67,7 +67,7 @@ class Stack_linked:
         return self.stack.list_size()
     
     def empty(self)-> bool: # 스택이 비었는지 여부 return
-        return self.empty()
+        return self.stack.empty()
     
     def top(self)-> int: # top에 있는 값 return
         return self.stack.peek()
@@ -77,3 +77,34 @@ class Stack_linked:
     
     def pop(self)-> int: # 스택에 element 삭제
         return self.stack.delete()
+
+if __name__ == "__main__": # 테스트 케이스
+    stack = Stack_linked()
+    print('made stack')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
+    
+    stack.push(1)
+    print('push 1')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
+    
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    print('push 2, 3, 4')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
+    
+    print('pop')
+    print(f'stack.pop: {stack.pop()}')
+    print(f'stack.empty: {stack.empty()}')
+    print(f'stack.size: {stack.size()}')
+    print(f'stack.top: {stack.top()}')
+    print()
