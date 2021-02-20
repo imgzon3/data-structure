@@ -33,7 +33,7 @@ class Cal_post_fix:
         # self.size = len(self.postfix)
         
         for tmpch in self.postfix:
-            if tmpch!='+' or tmpch!='-' or tmpch!='*' or tmpch!='/': # 피연산자 처리
+            if tmpch!='+' and tmpch!='-' and tmpch!='*' and tmpch!='/': # 피연산자 처리
                 self.stack.push(int(tmpch))
             else: # 연산자 처리
                 tmp2 = self.stack.pop()
@@ -52,6 +52,11 @@ class Cal_post_fix:
         
         self.result = self.stack.pop()
     
-    
+    def res(self)-> int:
+        return self.result
 if __name__ == "__main__":
-    print(1)
+    a = Cal_post_fix('23*63/-')
+    print(a.res())
+    
+    b = Cal_post_fix('523*-7+')
+    print(b.res())
