@@ -32,3 +32,30 @@ class Queue_array:
         else:
             self.queue.pop(0)
             self.r -= 1
+
+if __name__ == "__main__":
+    que = Queue_array()
+    print('made Queue_array()')
+    print(f'que.empty(): {que.empty()}')
+    print(f'que.size(): {que.size()}')
+    print(f'que.front(): {que.front()}')
+    print(f'que.rear(): {que.rear()}')
+    print()
+    
+    que.enqueue(1)
+    que.enqueue(2)
+    que.enqueue(3)
+    print('enqueue 1, 2, 3')
+    print(f'que.empty(): {que.empty()}')
+    print(f'que.size(): {que.size()}')
+    print(f'que.front(): {que.front()}')
+    print(f'que.rear(): {que.rear()}')
+    print()
+    
+    que.dequeue()
+    print('dequeue')
+    print(f'que.empty(): {que.empty()}')
+    print(f'que.size(): {que.size()}')
+    print(f'que.front(): {que.front()}')
+    print(f'que.rear(): {que.rear()}')
+    print()
