@@ -1,3 +1,5 @@
+# 파이썬으로 구현하였으므로, 메모리 손실에 대해 걱정할 필요는 없다
+# 파이썬의 list는 크기가 정해져 있지 않기 때문
 class Queue_array:
     def __init__(self):
         self.queue = [] # queue 저장할 리스트
