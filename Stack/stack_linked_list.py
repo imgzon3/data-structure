@@ -72,4 +72,8 @@ class Stack_linked:
     def top(self)-> int: # top에 있는 값 return
         return self.stack.peek()
     
+    def push(self, n: int)-> int: # 스택에 element 삽입
+        self.stack.append(n)
+        self.t += 1
+    
     
