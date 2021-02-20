@@ -25,3 +25,12 @@ class Stack_array: # 배열을 기반으로 한 스택
         else:
             self.t -= 1 # top index - 1 하기
             return self.stack.pop(-1) # pop함수 실행
+
+class Cal_post_fix:
+    def __init__(self, exp: str):
+        self.stack = Stack_array()
+        self.postfix = exp
+        # self.size = len(self.postfix)
+
+if __name__ == "__main__":
+    print(1)
