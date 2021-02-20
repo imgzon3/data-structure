@@ -69,4 +69,7 @@ class Stack_linked:
     def empty(self)-> bool: # 스택이 비었는지 여부 return
         return self.empty()
     
+    def top(self)-> int: # top에 있는 값 return
+        return self.stack.peek()
+    
     
