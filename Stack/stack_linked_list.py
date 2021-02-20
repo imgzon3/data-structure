@@ -61,7 +61,7 @@ class S_linked_list:
 class Stack_linked:
     def __init__(self):
         self.stack = S_linked_list() # singly linked list기반 저장
-        self.t = -1 # top index -1로 default
+        # self.t = -1 # top index -1로 default
     
     def size(self)->int: # 스택의 크기 return
         return self.stack.list_size()
@@ -72,8 +72,8 @@ class Stack_linked:
     def top(self)-> int: # top에 있는 값 return
         return self.stack.peek()
     
-    def push(self, n: int)-> int: # 스택에 element 삽입
+    def push(self, n: int): # 스택에 element 삽입
         self.stack.append(n)
-        self.t += 1
     
-    
+    def pop(self)-> int: # 스택에 element 삭제
+        return self.stack.delete()
