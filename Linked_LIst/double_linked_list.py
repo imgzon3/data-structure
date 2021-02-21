@@ -9,4 +9,9 @@ class D_linked_list:
         self.head = None # head에 위치하는 node의 주소 값 저장
         self.tail = None # tail에 위치하는 node의 주소 값 저장
     
+    def empty(self)-> bool: # list의 비었는지 여부를 반환하는 함수
+        if self.head==None and self.tail==None:
+            return 1
+        else:
+            return 0
     
