@@ -15,3 +15,19 @@ class D_linked_list:
         else:
             return 0
     
+    def size(self)-> int: # list의 크기를 반환하는 함수
+        tmp = 1
+        cur_node = self.head
+        
+        if self.empty(): # list가 비어있다면
+            return 0
+        else:
+            while True:
+                if cur_node.back==None:
+                    break
+                else:
+                    cur_node = cur_node.back
+                    tmp += 1
+            return tmp
+    
+    
