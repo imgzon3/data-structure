@@ -30,4 +30,10 @@ class D_linked_list:
                     tmp += 1
             return tmp
     
+    def begin(self)-> object: # list의 앞의 element 반환
+        return self.head.element
+    
+    def end(self)-> object: # list의 뒤의 element 반환
+        return self.tail.element
+    
     
