@@ -53,6 +53,8 @@ class D_linked_list:
         elif self.empty() and i==0: # list가 비어있을 경우
             self.head.back = node
             self.tail.front = node
+            node.front = self.head
+            node.back = self.tail
         else:
             while True:
                 if tmp==i:
@@ -67,14 +69,13 @@ class D_linked_list:
             node.back = next_node
     
     def erase(self, i: int)-> object: # list의 index i에 위치하는 element e 제거
-        pre_node = self.head
-        next_node = self.head.back
+        cur_node = self.head.back
         tmp = 0
         
         if i>=self.size() or i<0: # index가 size보다 크거나 같거나, 0보다 작은 경우
             print('out of index')
             return None
-        elif self.empty: # list가 비어있을 경우
+        elif self.empty(): # list가 비어있을 경우
             print('list is empty')
             return None
         else:
@@ -82,8 +83,52 @@ class D_linked_list:
                 if tmp==i:
                     break
                 else:
-                    pre_node = pre_node.back
-                    next_node = next_node.back
+                    cur_node = cur_node.back
                     tmp += 1
-                pre_node.back = next_node
-                next_node.front = pre_node
+            tmp_el = cur_node.element
+            pre_node = cur_node.front
+            next_node = cur_node.back
+            pre_node.back = next_node
+            next_node.front = pre_node
+            return tmp_el
+
+if __name__ == "__main__":
+    d_list = D_linked_list()
+    print('made d_list')
+    print(f'd_list.empty(): {d_list.empty()}')
+    print(f'd_list.size(): {d_list.size()}')
+    print(f'd_list.begin(): {d_list.begin()}')
+    print(f'd_list.end(): {d_list.end()}')
+    print()
+    
+    d_list.insert(0, 1)
+    print('insert (0, 1)')
+    print(f'd_list.empty(): {d_list.empty()}')
+    print(f'd_list.size(): {d_list.size()}')
+    print(f'd_list.begin(): {d_list.begin()}')
+    print(f'd_list.end(): {d_list.end()}')
+    print()
+    
+    d_list.insert(1, 2)
+    d_list.insert(2, 3)
+    print('insert (1, 2), (2, 3)')
+    print(f'd_list.empty(): {d_list.empty()}')
+    print(f'd_list.size(): {d_list.size()}')
+    print(f'd_list.begin(): {d_list.begin()}')
+    print(f'd_list.end(): {d_list.end()}')
+    print()
+    
+    d_list.insert(1, 10)
+    print('insert (1, 10)')
+    print(f'd_list.empty(): {d_list.empty()}')
+    print(f'd_list.size(): {d_list.size()}')
+    print(f'd_list.begin(): {d_list.begin()}')
+    print(f'd_list.end(): {d_list.end()}')
+    print()
+    
+    print(f'd_list.erase(1): {d_list.erase(3)}')
+    print(f'd_list.empty(): {d_list.empty()}')
+    print(f'd_list.size(): {d_list.size()}')
+    print(f'd_list.begin(): {d_list.begin()}')
+    print(f'd_list.end(): {d_list.end()}')
+    print()
