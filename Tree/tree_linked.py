@@ -66,6 +66,7 @@ class Tree:
                 self.node_list.remove(i) # tree의 node 리스트에 제거
                 tmp = False
                 break
+            
         if tmp: # 해당 element를 지닌 node가 없다면
             print(f'error: there is no node with {el}')
     
@@ -77,11 +78,20 @@ class Tree:
                     print(f'There is no child for node:{el}')
                 else:
                     print(f'child list: {i.child}')
-        
+                    
         if tmp:
             print(f'error: there is no node with {el}')
     
-    
+    def print_sib(self, el: object): # 해당 node와 같은 부모를 가지는 node 출력
+        tmp = True
+        for i in self.node_list:
+            if i.element==el:
+                tmp_par = i.parent
+                print(f'sibling list: {tmp_par.child}')
+                break
+            
+        if tmp:
+            print(f'error: there is no node with {el}')
 
 if __name__ == "__main__":
     tree = Tree(1)
