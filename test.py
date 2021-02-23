@@ -1,3 +1,3 @@
-tmp = [1, 2, 3, 4, 5]
-tmp.insert(1, 10)
+tmp = [10, 49, 541, 31]
+tmp.remove(49)
 print(tmp)
