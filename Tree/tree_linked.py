@@ -50,3 +50,7 @@ class Tree:
         
         if tmp: # 해당 부모 node가 없다면
             print(f'error: there is no node with {par_el}')
+
+if __name__ == "__main__":
+    tree = Tree(1)
+    
