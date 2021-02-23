@@ -38,6 +38,9 @@ class Tree:
         self.node_list = [] # 해당 tree node의 주소들을 저장해 놓는 list
         self.node_list.append(node)
     
+    def size(self)-> int: # 해당 tree의 크기 반환
+        return len(self.node_list)
+    
     def insert_node(self, par_el: object, el: object): # 해당 부모 node를 찾고, 자식 node를 만들어 추가
         node = Node(el)
         tmp = True
