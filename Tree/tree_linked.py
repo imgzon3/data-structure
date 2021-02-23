@@ -60,6 +60,7 @@ class Tree:
                 tmp_par.child.remove(i) # 부모에서 해당 node 제거
                 for k in tmp_chi:
                     tmp_par.child.append(k)
+                self.node_list.remove(i) # tree의 node 리스트에 제거
                 tmp = False
                 break
         if tmp: # 해당 element를 지닌 node가 없다면
