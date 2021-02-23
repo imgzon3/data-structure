@@ -50,6 +50,20 @@ class Tree:
         
         if tmp: # 해당 부모 node가 없다면
             print(f'error: there is no node with {par_el}')
+    
+    def del_node(self, el: object): # 해당 node 삭제, 자식 node들을 부모의 자식으로 추가
+        tmp = True
+        for i in self.node_list:
+            if i.element==el:
+                tmp_chi = i.child
+                tmp_par = i.parent
+                tmp_par.child.remove(i) # 부모에서 해당 node 제거
+                for k in tmp_chi:
+                    tmp_par.child.append(k)
+                tmp = False
+                break
+        if tmp: # 해당 element를 지닌 node가 없다면
+            print(f'error: there is no node with {el}')
 
 if __name__ == "__main__":
     tree = Tree(1)
