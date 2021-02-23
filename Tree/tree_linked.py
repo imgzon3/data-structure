@@ -25,14 +25,28 @@ class Node:
         for i in self.child:
             if i==n:
                 self.child.remove(i)
+                break
+            
     
     def set_parent(self, n:Node): # 현재 node의 부모를 바꾸는 함수
         self.parent = n
 
 class Tree:
-    def __init__(self, e: object):
-        node = Node(e)
+    def __init__(self, e: object): # root가 될 node의 element 받음
+        node = Node(e) # root가 될 node
         self.root = node
-        self.node_list = []
+        self.node_list = [] # 해당 tree node의 주소들을 저장해 놓는 list
+        self.node_list.append(node)
     
-    
+    def insert_node(self, par_el: object, el: object): # 해당 부모 node를 찾고, 자식 node를 만들어 추가
+        node = Node(el)
+        tmp = True
+        for i in self.node_list:
+            if i.element==par_el:
+                i.child.append(node) # 자식에 추가
+                self.node_list.append(node) # tree의 node 리스트에 추가
+                tmp = False
+                break
+        
+        if tmp: # 해당 부모 node가 없다면
+            print(f'error: there is no node with {par_el}')
