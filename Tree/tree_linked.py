@@ -68,6 +68,20 @@ class Tree:
                 break
         if tmp: # 해당 element를 지닌 node가 없다면
             print(f'error: there is no node with {el}')
+    
+    def print_chi(self, el: object): # 해당 node의 자식들 출력함
+        tmp = True
+        for i in self.node_list:
+            if i.element==el:
+                if len(i.child)==0:
+                    print(f'There is no child for node:{el}')
+                else:
+                    print(f'child list: {i.child}')
+        
+        if tmp:
+            print(f'error: there is no node with {el}')
+    
+    
 
 if __name__ == "__main__":
     tree = Tree(1)
