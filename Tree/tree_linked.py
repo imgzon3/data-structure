@@ -94,5 +94,16 @@ class Tree:
             print(f'error: there is no node with {el}')
 
 if __name__ == "__main__":
-    tree = Tree(1)
-    
+    root = input('input your element for root(int): ')
+    tree = Tree(int(root))
+    n = input('input how many functions you will use: ')
+    for _ in range(int(n)):
+        request = input()
+        if 'size' in request:
+            pass
+        elif 'insert' in request:
+            pass
+        elif 'delete' in request:
+            pass
+        elif 'print' in request:
+            pass
