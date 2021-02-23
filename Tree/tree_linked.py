@@ -28,3 +28,11 @@ class Node:
     
     def set_parent(self, n:Node): # 현재 node의 부모를 바꾸는 함수
         self.parent = n
+
+class Tree:
+    def __init__(self, e: object):
+        node = Node(e)
+        self.root = node
+        self.node_list = []
+    
+    
