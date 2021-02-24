@@ -9,7 +9,7 @@ Tree에 필요한 함수
 2. del_node
 3. print_chi
 4. print_sib
-5. print_tree
+5. print_tree: tree 출력
 '''
 
 class Node:
@@ -95,8 +95,9 @@ class Tree:
 
 if __name__ == "__main__":
     root = input('input your element for root(int): ')
-    tree = Tree(int(root))
-    n = input('input how many functions you will use: ')
+    tree = Tree(int(root)) # 입력받은 root값으로 tree 생성
+    n = input('input how many functions you will use: ') # 반복할 입력 값 수
+    
     for _ in range(int(n)):
         request = input()
         if 'size' in request:
@@ -107,3 +108,5 @@ if __name__ == "__main__":
             pass
         elif 'print' in request:
             pass
+        else:
+            print(f'There is no function named{request}\n(size, insert, delete, print are functions we have)')
