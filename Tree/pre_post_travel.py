@@ -94,6 +94,11 @@ class Tree:
         if tmp:
             print(f'error: there is no node with {el}')
 
+def pre_order(self, n:Node):
+    print(n.element)
+    for i in n.child:
+        pre_order(i)
+
 if __name__ == "__main__":
     tree = Tree(1)
     tree.insert_node(1, 2)
