@@ -78,7 +78,11 @@ class Tree:
                     print(f'There is no child for node:{el}')
                     tmp = False
                 else:
-                    print(f'child list: {i.child}')
+                    tmp_list = i.child
+                    res_list = []
+                    for k in tmp_list:
+                        res_list.append(k.element)
+                    print(f'child list: {res_list}')
                     tmp = False
         
         if tmp:
@@ -89,7 +93,10 @@ class Tree:
         for i in self.node_list:
             if i.element==el:
                 tmp_par = i.parent
-                print(f'sibling list: {tmp_par.child}')
+                res_list = []
+                for k in tmp_par.child:
+                    res_list.append(k.element)
+                print(f'sibling list: {res_list}')
                 break
             
         if tmp:
