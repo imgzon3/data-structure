@@ -135,7 +135,7 @@ if __name__ == "__main__":
             elif select==2:
                 tree.print_sib(el)
             elif select==3:
-                pass
+                pass # 후에 tree 전체 print하는 함수 추가 예정
             else:
                 print('error:out of range(1~3 needed)')
         else:
