@@ -57,17 +57,21 @@ class Tree:
     
     def del_node(self, el: object): # 해당 node 삭제, 자식 node들을 부모의 자식으로 추가
         tmp = True
-        for i in self.node_list:
-            if i.element==el:
-                tmp_chi = i.child
-                tmp_par = i.parent
-                tmp_par.del_child(i) # 부모에서 해당 node 제거
-                for k in tmp_chi:
-                    tmp_par.insert_child(k)
-                self.node_list.remove(i) # tree의 node 리스트에 제거
-                tmp = False
-                break
-            
+        if el==self.root.element:
+            print(f"error: you can't delete root")
+            tmp = False
+        else:
+            for i in self.node_list:
+                if i.element==el:
+                    tmp_chi = i.child
+                    tmp_par = i.parent
+                    tmp_par.del_child(i) # 부모에서 해당 node 제거
+                    for k in tmp_chi:
+                        tmp_par.insert_child(k)
+                    self.node_list.remove(i) # tree의 node 리스트에 제거
+                    tmp = False
+                    break
+        
         if tmp: # 해당 element를 지닌 node가 없다면
             print(f'error: there is no node with {el}')
     
