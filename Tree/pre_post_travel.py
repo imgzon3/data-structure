@@ -93,3 +93,14 @@ class Tree:
             
         if tmp:
             print(f'error: there is no node with {el}')
+
+if __name__ == "__main__":
+    tree = Tree(1)
+    tree.insert_node(1, 2)
+    tree.insert_node(1, 3)
+    tree.insert_node(1, 4)
+    tree.insert_node(2, 5)
+    tree.insert_node(2, 6)
+    tree.insert_node(3, 7)
+    tree.insert_node(3, 8)
+    tree.insert_node(3, 9)
