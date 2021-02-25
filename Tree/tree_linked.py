@@ -78,9 +78,8 @@ class Tree:
                     print(f'There is no child for node:{el}')
                     tmp = False
                 else:
-                    tmp_list = i.child
                     res_list = []
-                    for k in tmp_list:
+                    for k in i.child:
                         res_list.append(k.element)
                     print(f'child list: {res_list}')
                     tmp = False
