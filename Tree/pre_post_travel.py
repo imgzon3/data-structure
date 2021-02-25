@@ -100,7 +100,7 @@ def pre_order(n):
         pre_order(i)
 
 if __name__ == "__main__":
-    tree = Tree(1)
+    tree = Tree(1) # root가 1인 tree 만들기
     tree.insert_node(1, 2)
     tree.insert_node(1, 3)
     tree.insert_node(1, 4)
@@ -109,3 +109,5 @@ if __name__ == "__main__":
     tree.insert_node(3, 7)
     tree.insert_node(3, 8)
     tree.insert_node(3, 9)
+    
+    pre_order(tree.root)
