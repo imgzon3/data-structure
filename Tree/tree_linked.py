@@ -48,6 +48,7 @@ class Tree:
             if i.element==par_el:
                 i.insert_child(node) # 자식에 추가
                 self.node_list.append(node) # tree의 node 리스트에 추가
+                node.parent = i
                 tmp = False
                 break
         
@@ -96,6 +97,7 @@ class Tree:
                 for k in tmp_par.child:
                     res_list.append(k.element)
                 print(f'sibling list: {res_list}')
+                tmp = False
                 break
             
         if tmp:
