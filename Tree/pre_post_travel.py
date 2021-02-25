@@ -95,7 +95,7 @@ class Tree:
             print(f'error: there is no node with {el}')
 
 def pre_order(n):
-    print(n.element)
+    print(n.element, end=' ')
     for i in n.child:
         pre_order(i)
 
