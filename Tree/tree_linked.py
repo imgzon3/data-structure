@@ -67,6 +67,7 @@ class Tree:
                     tmp_par = i.parent
                     tmp_par.del_child(i) # 부모에서 해당 node 제거
                     for k in tmp_chi:
+                        k.parent = tmp_par
                         tmp_par.insert_child(k)
                     self.node_list.remove(i) # tree의 node 리스트에 제거
                     tmp = False
