@@ -99,6 +99,11 @@ def pre_order(n):
     for i in n.child:
         pre_order(i)
 
+def post_order(n):
+    for i in n.child:
+        post_order(i)
+    print(n.element, end=' ')
+
 if __name__ == "__main__":
     tree = Tree(1) # root가 1인 tree 만들기
     tree.insert_node(1, 2)
@@ -110,4 +115,10 @@ if __name__ == "__main__":
     tree.insert_node(3, 8)
     tree.insert_node(3, 9)
     
+    print('Preorder Traversal: ') # 전위 순회 출력
     pre_order(tree.root)
+    print()
+    
+    print('Postorder Traversal: ') # 후위 순회 출력
+    post_order(tree.root)
+    print()
