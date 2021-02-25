@@ -18,17 +18,17 @@ class Node:
         self.parent = None
         self.child = []
     
-    def insert_child(self, n:Node): # 해당 node에 자식을 삽입할 때 사용하는 함수
+    def insert_child(self, n): # 해당 node에 자식을 삽입할 때 사용하는 함수
         self.child.append(n)
     
-    def del_child(self, n:Node): # 현재 node의 자식 node 중 특정 node를 제거
+    def del_child(self, n): # 현재 node의 자식 node 중 특정 node를 제거
         for i in self.child:
             if i==n:
                 self.child.remove(i)
                 break
             
     
-    def set_parent(self, n:Node): # 현재 node의 부모를 바꾸는 함수
+    def set_parent(self, n): # 현재 node의 부모를 바꾸는 함수
         self.parent = n
 
 class Tree:
@@ -46,7 +46,7 @@ class Tree:
         tmp = True
         for i in self.node_list:
             if i.element==par_el:
-                i.child.append(node) # 자식에 추가
+                i.insert_child(node) # 자식에 추가
                 self.node_list.append(node) # tree의 node 리스트에 추가
                 tmp = False
                 break
@@ -60,9 +60,9 @@ class Tree:
             if i.element==el:
                 tmp_chi = i.child
                 tmp_par = i.parent
-                tmp_par.child.remove(i) # 부모에서 해당 node 제거
+                tmp_par.del_child(i) # 부모에서 해당 node 제거
                 for k in tmp_chi:
-                    tmp_par.child.append(k)
+                    tmp_par.insert_child(k)
                 self.node_list.remove(i) # tree의 node 리스트에 제거
                 tmp = False
                 break
@@ -76,9 +76,11 @@ class Tree:
             if i.element==el:
                 if len(i.child)==0:
                     print(f'There is no child for node:{el}')
+                    tmp = False
                 else:
                     print(f'child list: {i.child}')
-                    
+                    tmp = False
+        
         if tmp:
             print(f'error: there is no node with {el}')
     
@@ -101,12 +103,27 @@ if __name__ == "__main__":
     for _ in range(int(n)):
         request = input()
         if 'size' in request:
-            pass
+            print(tree.size())
         elif 'insert' in request:
-            pass
+            tmp, par_el, chi_el = map(str, request.split())
+            par_el = int(par_el)
+            chi_el = int(chi_el)
+            tree.insert_node(par_el, chi_el)
         elif 'delete' in request:
-            pass
+            tmp, el = map(str, request.split())
+            el = int(el)
+            tree.del_node(el)
         elif 'print' in request:
-            pass
+            tmp, el = map(str, request.split())
+            el = int(el)
+            select = int(input('What will you print?(1: child, 2:siblings, 3:tree): '))
+            if select==1:
+                tree.print_chi(el)
+            elif select==2:
+                tree.print_sib(el)
+            elif select==3:
+                pass
+            else:
+                print('error:out of range(1~3 needed)')
         else:
             print(f'There is no function named{request}\n(size, insert, delete, print are functions we have)')

@@ -1,3 +1,5 @@
-tmp = [10, 49, 541, 31]
-tmp.remove(49)
-print(tmp)
+t = input()
+print(t)
+a, b = map(str, t.split())
+print(a)
+print(b)
