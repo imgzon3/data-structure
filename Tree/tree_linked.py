@@ -10,6 +10,9 @@ Tree에 필요한 함수
 3. print_chi
 4. print_sib
 5. print_tree: tree 출력
+
+tree 출력하기 위한 것들
+'│  ', '├──', '└──', ''
 '''
 
 class Node:
