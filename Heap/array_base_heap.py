@@ -75,3 +75,12 @@ class Heap:
             self.array.pop(-1)
             self.downheap(1)
             return tmp
+    
+    def top(self)-> int:
+        if self.is_empty:
+            print('error: heap is empty')
+            return None
+        else:
+            return self.array[1]
+    
+    
