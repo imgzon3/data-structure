@@ -36,3 +36,27 @@ class Heap:
             if self.array[parent]*self.dir > self.array[idx]*self.dir:
                 self.swap(parent, idx)
                 self.upheap(parent)
+    
+    def downheap(self, idx: int): # downheap 진행하는 재귀함수
+        left = idx*2
+        right = idx*2 + 1
+        if right <= len(self.array)-1: # 두 자식이 존재할 경우
+            if self.array[left]*self.dir <= self.array[right]*self.dir: # 왼쪽의 자식이 더 작다면(max-heap이면 크다면)
+                if self.array[left]*self.dir < self.array[idx]*self.dir:
+                    self.swap(idx, left)
+                    self.downheap(left)
+                else:
+                    return
+            elif self.array[left]*self.dir > self.array[right]*self.dir: # 오른쪽의 자식이 더 작다면(max-heap이면 크다면)
+                if self.array[right]*self.dir < self.array[idx]*self.dir:
+                    self.swap(idx, right)
+                    self.downheap(right)
+                else:
+                    return
+        elif left <= len(self.array)-1: # 왼쪽의 한 자식만 존재할 경우
+            if self.array[left]*self.dir < self.array[idx]*self.dir:
+                self.swap(left, idx)
+            else:
+                return
+        else:
+            return
