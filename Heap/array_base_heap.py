@@ -83,4 +83,6 @@ class Heap:
         else:
             return self.array[1]
     
+    def size(self)-> int:
+        return len(self.array)-1
     
