@@ -60,3 +60,7 @@ class Heap:
                 return
         else:
             return
+    
+    def insert(self, e: int): # element e를 대입함
+        self.array.append(e)
+        self.upheap(len(self.array)-1)
