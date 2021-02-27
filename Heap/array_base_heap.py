@@ -28,4 +28,11 @@ class Heap:
         self.array[idx1] = self.array[idx2]
         self.array[idx2] = self.array[idx1]
     
-    
+    def upheap(self, idx: int): # upheap 진행하는 재귀함수
+        if idx == 1: # idx가 root라면
+            return
+        else:
+            parent = idx//2
+            if self.array[parent]*self.dir > self.array[idx]*self.dir:
+                self.swap(parent, idx)
+                self.upheap(parent)

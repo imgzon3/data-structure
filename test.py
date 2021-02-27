@@ -1,5 +1,3 @@
-t = input()
-print(t)
-a, b = map(str, t.split())
-print(a)
+a = 19
+b = a//2
 print(b)
