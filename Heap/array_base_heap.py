@@ -20,6 +20,9 @@ class Heap:
         self.array = [-1] # 0번째 index값은 사용 안함
         self.dir = dir
     
+    def is_empty(self)-> bool: # heap의 빈 여부 반환
+        return len(self.array)==1
+    
     def swap(self, idx1: int, idx2: int): # 입력받은 2개의 inx에 저장되어 있는 값을 서로 바꿈
         self.array[0] = self.array[idx1]
         self.array[idx1] = self.array[idx2]
