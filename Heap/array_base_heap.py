@@ -13,6 +13,7 @@ heap functions
 6. top()
 7. size()
 8. print()
+8-2. print_g()
 9. find()
 '''
 class Heap:
@@ -86,3 +87,9 @@ class Heap:
     def size(self)-> int:
         return len(self.array)-1
     
+    def print(self)-> str:
+        tmp = ''
+        for idx, i in enumerate(self.array):
+            if idx!=0:
+                tmp += str(i) + ' '
+        return tmp
