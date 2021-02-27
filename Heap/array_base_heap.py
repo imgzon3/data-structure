@@ -69,11 +69,11 @@ class Heap:
             return
     
     def insert(self, e: int): # element e를 대입함
-        self.array.append(e)
+        self.array.append(int(e))
         self.upheap(len(self.array)-1)
     
     def pop(self)-> int: # heap에 성질에 따라, 최솟값 혹은 최댓값을 반환함
-        if self.is_empty:
+        if self.is_empty():
             print('error: heap is empty')
             return None
         else:
@@ -116,3 +116,6 @@ if __name__ == "__main__":
     print(f'insert 7, heap:{heap.print()}')
     heap.insert(6)
     print(f'insert 6, heap:{heap.print()}')
+    
+    for _ in range(5):
+        print(f'heap.pop(): {heap.pop()}')
