@@ -21,4 +21,8 @@ class Heap:
         self.dir = dir
     
     def swap(self, idx1: int, idx2: int): # 입력받은 2개의 inx에 저장되어 있는 값을 서로 바꿈
-        
+        self.array[0] = self.array[idx1]
+        self.array[idx1] = self.array[idx2]
+        self.array[idx2] = self.array[idx1]
+    
+    
