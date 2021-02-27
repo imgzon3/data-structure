@@ -64,3 +64,14 @@ class Heap:
     def insert(self, e: int): # element e를 대입함
         self.array.append(e)
         self.upheap(len(self.array)-1)
+    
+    def pop(self)-> int: # heap에 성질에 따라, 최솟값 혹은 최댓값을 반환함
+        if self.is_empty:
+            print('error: heap is empty')
+            return None
+        else:
+            tmp = self.array[1]
+            self.swap(1, len(self.array)-1)
+            self.array.pop(-1)
+            self.downheap(1)
+            return tmp
