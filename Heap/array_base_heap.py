@@ -16,4 +16,6 @@ heap functions
 10. find()
 '''
 class Heap:
-    
+    def __init__(self, dir: int): # 1 입력받으면 min-heap, -1 입력받으면 max-heap
+        self.array = [-1] # 0번째 index값은 사용 안함
+        self.dir = dir
