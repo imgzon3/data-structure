@@ -18,6 +18,11 @@ heap functions
 '''
 class Heap:
     def __init__(self, dir: int): # 1 입력받으면 min-heap, -1 입력받으면 max-heap
+        """heap을 생성하는 class입니다.
+
+        Args:
+            dir (int): 1이면 mean-heap, -1이면 max-heap
+        """
         self.array = [-1] # 0번째 index값은 사용 안함
         self.dir = dir
     
@@ -27,7 +32,8 @@ class Heap:
     def swap(self, idx1: int, idx2: int): # 입력받은 2개의 inx에 저장되어 있는 값을 서로 바꿈
         self.array[0] = self.array[idx1]
         self.array[idx1] = self.array[idx2]
-        self.array[idx2] = self.array[idx1]
+        self.array[idx2] = self.array[0]
+        # print(f'swap {idx1} and {idx2}')
     
     def upheap(self, idx: int): # upheap 진행하는 재귀함수
         if idx == 1: # idx가 root라면
@@ -87,9 +93,26 @@ class Heap:
     def size(self)-> int:
         return len(self.array)-1
     
-    def print(self)-> str:
+    def print(self)-> str: # 0번 index를 제외한 저장된 배열을 str으로 변환하여 출력
         tmp = ''
         for idx, i in enumerate(self.array):
             if idx!=0:
                 tmp += str(i) + ' '
         return tmp
+    
+    def print_g(self): # 해당 heap의 모양을 그래프로 출력
+        # '─', '┘', '└', '┴', '┌', '┐', '│' 활용
+        pass
+
+if __name__ == "__main__":
+    heap = Heap(1) # mean-heap 선언
+    heap.insert(1)
+    print(f'insert 1, heap:{heap.print()}')
+    heap.insert(10)
+    print(f'insert 10, heap:{heap.print()}')
+    heap.insert(3)
+    print(f'insert 3, heap:{heap.print()}')
+    heap.insert(7)
+    print(f'insert 7, heap:{heap.print()}')
+    heap.insert(6)
+    print(f'insert 6, heap:{heap.print()}')
