@@ -16,6 +16,8 @@ heap functions
 8-2. print_g()
 9. find()
 '''
+import math # log 사용하기 위해서
+
 class Heap:
     def __init__(self, dir: int): # 1 입력받으면 min-heap, -1 입력받으면 max-heap
         """heap을 생성하는 class입니다.
@@ -99,10 +101,6 @@ class Heap:
             if idx!=0:
                 tmp += str(i) + ' '
         return tmp
-    
-    def print_g(self): # 해당 heap의 모양을 그래프로 출력
-        # '─', '┘', '└', '┴', '┌', '┐', '│' 활용
-        pass
 
 if __name__ == "__main__":
     heap = Heap(1) # mean-heap 선언
