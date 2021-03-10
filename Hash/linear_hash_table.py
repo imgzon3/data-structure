@@ -13,7 +13,7 @@ class Hashtable:
     def full(self)-> bool:
         tmp = True
         for i in self.table:
-            if not(i):
+            if i==None:
                 tmp = False
                 break
         return tmp
@@ -21,7 +21,7 @@ class Hashtable:
     def put(self, key: int, value: str):
         if not(self.full()):
             while True:
-                if not(self.table[key%13]):
+                if self.table[key%13]==None:
                     self.table[key%13] = value
                     break
                 else:
@@ -29,7 +29,7 @@ class Hashtable:
     
     def delete(self, key: int)-> str:
         while True:
-            if self.table[key%13]:
+            if self.table[key%13]==None:
                 print(f'There is no value in {key}')
                 break
             else:
@@ -41,8 +41,8 @@ class Hashtable:
                     return tmp
     
     def show(self):
-        for i in self.table():
-            if not(i):
+        for i in self.table:
+            if i!=None:
                 if i!=False:
                     print(i)
 
@@ -55,3 +55,4 @@ if __name__ == '__main__':
         hashing.put(nums[i], nums_str[i])
     
     hashing.show()
+    print(hashing.table)
