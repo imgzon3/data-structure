@@ -38,8 +38,19 @@ class Hashtable:
                     tmp = self.table[key%13]
                     self.table[key%13] = False
                     return tmp
+    
+    def show(self):
+        for i in self.table():
+            if not(i):
+                if i!=False:
+                    print(i)
 
 
 if __name__ == '__main__':
     hashing = Hashtable()
+    nums = [18, 41, 22, 44, 59, 32, 31, 73]
+    nums_str = ['18!', '41!', '22!', '44!', '59!', '32!', '31!', '73!']
+    for i in nums:
+        hashing.put(nums, nums_str)
     
+    hashing.show()
