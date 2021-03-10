@@ -26,7 +26,7 @@ class Hashtable:
                 else:
                     key += 1
     
-    def del(self, key: int)-> str:
+    def delete(self, key: int)-> str:
         while True:
             if self.table[key%13]:
                 print(f'There is no value in {key}')
