@@ -23,6 +23,7 @@ class Hashtable:
             while True:
                 if not(self.table[key%13]):
                     self.table[key%13] = value
+                    break
                 else:
                     key += 1
     
@@ -50,7 +51,7 @@ if __name__ == '__main__':
     hashing = Hashtable()
     nums = [18, 41, 22, 44, 59, 32, 31, 73]
     nums_str = ['18!', '41!', '22!', '44!', '59!', '32!', '31!', '73!']
-    for i in nums:
-        hashing.put(nums, nums_str)
+    for i in range(len(nums)):
+        hashing.put(nums[i], nums_str[i])
     
     hashing.show()
