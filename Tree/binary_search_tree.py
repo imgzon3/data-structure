@@ -36,5 +36,7 @@ class SearchTree:
                 else:
                     self.insert(curNode.left, i)
 
+    def delete(self, nd, i: int)-> int: # 입력된 수와 동일한 data를 지닌 node값 삭제
+        pass
 if __name__ == "__main__":
     searchTree = SearchTree()
