@@ -4,6 +4,7 @@ binary search tree
 1. insert
 2. delete
 3. get
+4. print(child, siblings)
 '''
 class Node:
     def __init__(self, i: int):
@@ -39,7 +40,17 @@ class SearchTree:
                 else:
                     self._insert_value(curNode.left, i)
 
-    def delete(self, nd, i: int)-> int: # 입력된 수와 동일한 data를 지닌 node값 삭제
+    def delete(self, i: int)-> int: # 입력된 수와 동일한 data를 지닌 node값 삭제
         pass
+    
+    def printChild(self, i: int): # 입력된 수를 지니고 있는 node의 자식 출력
+        pass
+    
+    def printSib(self, i: int):
+        pass
+    
+    def _search(self, nd, i: int):
+        pass
+
 if __name__ == "__main__":
     searchTree = SearchTree()
