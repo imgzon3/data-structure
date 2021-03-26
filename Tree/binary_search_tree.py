@@ -15,7 +15,10 @@ class SearchTree:
     def __init__(self):
         self.root = None
 
-    def insert(self, nd, i:int): # insert, root 비었으면 root에 삽입, 아닐 시 재귀
+    def insert(self, i: int):
+        self._insert_value(self.root, i)
+    
+    def _insert_value(self, nd, i:int): # insert, root 비었으면 root에 삽입, 아닐 시 재귀
         curNode = nd
         if self.root == None: # root가 비어있을 경우
             tmp = Node(i)
@@ -27,14 +30,14 @@ class SearchTree:
                     curNode.right = tmp
                     tmp.parent = curNode
                 else:
-                    self.insert(curNode.right, i)
+                    self._insert_value(curNode.right, i)
             elif curNode.data > i: # data가 현재 노드의 데이터보다 작으면 왼쪽 node로
                 if curNode.left == None:
                     tmp = Node(i)
                     curNode.left = tmp
                     tmp.parent = curNode
                 else:
-                    self.insert(curNode.left, i)
+                    self._insert_value(curNode.left, i)
 
     def delete(self, nd, i: int)-> int: # 입력된 수와 동일한 data를 지닌 node값 삭제
         pass
